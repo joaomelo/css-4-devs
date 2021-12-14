@@ -85,16 +85,22 @@ const ImageWrapper = styled.div`
 const Image = styled.img`
   width: 100%;
   display: block;
+  filter: brightness(90%);
 
   transform-origin: 50% 75%;
-  transition: transform 600ms;
+  transition: 
+    filter 800ms,
+    transform 600ms;
   will-change: transform;
 
   @media (hover: hover) and (prefers-reduced-motion: no-preference) {
     ${Link}:hover &,
     ${Link}:focus & {
       transform: scale(1.1);
-      transition: transform 200ms;
+      transition: 
+        filter 400ms,
+        transform 200ms;
+      filter: brightness(100%);
     }
   }
 `;
